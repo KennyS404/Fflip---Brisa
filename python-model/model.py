@@ -16,10 +16,10 @@ historico_perguntas_respostas = []
 
 # Configuração do ambiente e variáveis necessárias
 os.environ["HUGGINGFACEHUB_API_TOKEN"] = "token_da_huggingface"
-caminho_correto_do_arquivo = '/home/kenny/brisa/Fflip---Brisa/python-model/data.csv'
+caminho_correto_do_arquivo = '/home/kenny/brisa/Fflip---Brisa/python-model/data.txt'
 
 # Configuração inicial do modelo e documentação
-loader = CSVLoader(caminho_correto_do_arquivo)
+loader = TextLoader(caminho_correto_do_arquivo)
 document = loader.load()
 text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
 docs = text_splitter.split_documents(document)
